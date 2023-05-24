@@ -15,7 +15,7 @@ pipeline {
                 def sshCommands = [
                         //"sh 'pwd'",
                         "ls",
-                        "git https://github.com/Mauriciomery/microservice-app-for-training-devops.git",
+                        "git clone https://github.com/Mauriciomery/microservice-app-for-training-devops.git",
                         "pwd",
                         "chmod -R ugo+rwx microservice-app-example/",
                         "nvm install 8.17.0",
