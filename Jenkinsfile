@@ -23,7 +23,7 @@ pipeline {
                         "npm install",
                         "npm audit fix",
                         "npm run build",
-                        "PORT=9050 AUTH_API_ADDRESS=http://internal-MM-Internal-LB-2051230687.us-east-1.elb.amazonaws.com:8020 TODOS_API_ADDRESS=http://internal-MM-Internal-LB-2051230687.us-east-1.elb.amazonaws.com:8082 npm start&",
+                        "PORT=9050 AUTH_API_ADDRESS=http://internal-MM-Internal-LB-2051230687.us-east-1.elb.amazonaws.com:8020 TODOS_API_ADDRESS=http://internal-MM-Internal-LB-2051230687.us-east-1.elb.amazonaws.com:8082 npm start",
                         "exit"
                     ]
                 echo "Aqui se entra a una EC2 instance del FRONT"
