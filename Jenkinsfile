@@ -24,14 +24,14 @@ pipeline {
                         "npm install",
                         "npm audit fix",
                         "npm run build",
-                        "PORT=9050 AUTH_API_ADDRESS=http://internal-MM-Internal-LB-2051230687.us-east-1.elb.amazonaws.com:8020 TODOS_API_ADDRESS=http://internal-MM-Internal-LB-2051230687.us-east-1.elb.amazonaws.com:8082 npm start",
+                        "PORT=9050 AUTH_API_ADDRESS=http://internal-MM-Internal-LB-2051230687.us-east-1.elb.amazonaws.com:8020 TODOS_API_ADDRESS=http://internal-MM-Internal-LB-2051230687.us-east-1.elb.amazonaws.com:8082 npm start&",
                         "exit"
                     ]
                 echo "Aqui se entra a una EC2 instance del FRONT"
                 echo "Intentando desde la carpeta de entrenamiento"
                 sh 'cd $HOME'   
                 sh 'ls'
-                def sshConnection = "ssh -t -o StrictHostKeyChecking=no -i 'rampup-mery2.pem' ec2-user@10.0.102.241 '${sshCommands.join(' && ')}'"
+                def sshConnection = "ssh -t -o StrictHostKeyChecking=no -i 'rampup-mery2.pem' ec2-user@10.0.101.177 '${sshCommands.join(' && ')}'"
                 sh sshConnection
                 echo 'aqui se salió de la maquina'
                 }
