@@ -31,7 +31,7 @@ pipeline {
                 echo "Intentando desde la carpeta de entrenamiento"
                 sh 'cd $HOME'   
                 sh 'ls'
-                def sshConnection = "ssh -t -o StrictHostKeyChecking=no -i 'rampup-mery2.pem' ec2-user@10.0.101.177 '${sshCommands.join(' && ')}'"
+                def sshConnection = "ssh -t -o StrictHostKeyChecking=no -i 'rampup-mery2.pem' ec2-user@10.0.101.147 '${sshCommands.join(' && ')}'"
                 sh sshConnection
                 echo 'aqui se salió de la maquina'
                 }
